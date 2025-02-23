@@ -26,14 +26,41 @@ typedef struct s_player
     int y;
 }   t_player;
 
-typedef struct 
+typedef struct s_img
 {
-    
-};
+    void *floor;
+    void *player;
+    void *collectible;
+    void *wall;
+    void *exit;
+    void *enemy;
+}   t_img;
+
+typedef struct s_map
+{
+    int fd;
+    char *line;
+    char *file;
+    char **array;
+    char **copy;
+    char *filename;
+    int x;
+    int y;
+    int e;
+    int c;
+    int e_check;
+    int c_check;
+    int p;
+    int exit;
+    int moves;
+    void *mlx;
+    void *wnd;
+    t_img img;
+    t_player player;
+}   t_map;
 
 
-
-
-
+void file_to_image(t_map *map);
+void map_printer(t_map *map);
 
 #endif
