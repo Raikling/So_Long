@@ -1,4 +1,4 @@
-SRC = so_long.c file_to_img.c map_printer.c
+SRC = so_long.c file_to_img.c map_printer.c map_array.c GNL/get_next_line.c GNL/get_next_line_utils.c free.c
 OBJ = $(SRC:.c=.o)
 NAME = so_long
 CC = gcc
@@ -7,9 +7,10 @@ AR = ar rcs
 RM = rm -rf
 PRINTF_DIR = ft_Printf
 MLX_DIR = minilibx-linux
+LIBFT_DIR = Libft
 
-LIBS = -L$(MLX_DIR) -lmlx -L/usr/lib -lXext -lX11 -lm -lz -L$(PRINTF_DIR) -lftprintf
-INCLUDES = -I$(MLX_DIR) -I$(PRINTF_DIR)
+LIBS = -L$(MLX_DIR) -lmlx -L/usr/lib -lXext -lX11 -lm -lz -L$(LIBFT_DIR) -lft -L$(PRINTF_DIR) -lftprintf 
+INCLUDES = -I$(MLX_DIR) -I$(PRINTF_DIR) -I$(LIBFT_DIR)
 
 all: $(NAME)
 

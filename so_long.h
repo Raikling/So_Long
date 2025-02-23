@@ -9,8 +9,10 @@
 #include "minilibx-linux/mlx.h"
 #include "GNL/get_next_line.h"
 #include "ft_Printf/ft_printf.h"
+#include "Libft/libft.h"
 #include <fcntl.h>
 #include <math.h>
+#include <stdlib.h>
 
 
 #define IMG_PXL 50
@@ -60,7 +62,14 @@ typedef struct s_map
 }   t_map;
 
 
-void file_to_image(t_map *map);
+void file_to_img(t_map *map);
 void map_printer(t_map *map);
+
+
+
+void map_array(t_map *map);
+int ft_free_array(char **arr, int i);
+void ft_exit_free(t_map *map);
+
 
 #endif
