@@ -1,4 +1,4 @@
-SRC = so_long.c file_to_img.c map_printer.c map_array.c GNL/get_next_line.c GNL/get_next_line_utils.c free.c
+SRC = so_long.c file_to_img.c map_printer.c map_array.c GNL/get_next_line.c GNL/get_next_line_utils.c free.c errors.c checks.c
 OBJ = $(SRC:.c=.o)
 NAME = so_long
 CC = gcc

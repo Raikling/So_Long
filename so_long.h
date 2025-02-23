@@ -71,5 +71,18 @@ void map_array(t_map *map);
 int ft_free_array(char **arr, int i);
 void ft_exit_free(t_map *map);
 
+void check_file(t_map *map);
+void check_param(t_map *map);
+void check_wall(t_map *map);
+void check_size(t_map *map);
+void map_checker(t_map *map);
+
+void error_filename(void);
+void error_wall(t_map *map);
+void error_openfile(void);
+void error_size(t_map *map);
+void error_map_elements(t_map *map);
+void error_image(t_map *map);
+
 
 #endif

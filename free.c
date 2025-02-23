@@ -11,8 +11,10 @@ int ft_free_array(char **arr, int i)
 void ft_exit_free(t_map *map)
 {
     if (map == NULL)
+    {
+        printf("Error: map is NULL\n");
         exit(EXIT_FAILURE);
-
+    }
     if (map->array)
     {
         for (int i = 0; map->array[i]; i++)
@@ -43,5 +45,6 @@ void ft_exit_free(t_map *map)
         free(map->line);
         map->line = NULL;
     }
+    printf("Exiting due to error\n");
     exit(EXIT_FAILURE);
 }
