@@ -21,7 +21,7 @@ static void move_resume(t_map *map, int *x, int *y, int direction)
 
     // Handle exit: return if player reaches 'E' and all collectibles are gathered
     if (map->array[*x][*y] == 'E' && map->c == 0)
-        return;
+        return (ft_win(map));
 
     // Handle collectible: remove 'C' and decrement counter
     if (map->array[*x][*y] == 'C')

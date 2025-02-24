@@ -25,6 +25,8 @@ int key_hook(int keysym, t_map *map)
     scan_player(map);
     if(keysym == ESC)
         return(ft_close(map));
+    else if (map->exit == 1)
+        return (0);
     else if (keysym == UP)
         move_up(map);
     else if (keysym == DOWN)

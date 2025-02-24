@@ -32,7 +32,6 @@ int main(int ac, char **av)
     map.wnd = mlx_new_window(map.mlx,map.y * IMG_PXL, map.x * IMG_PXL, "SO_LONG");
     file_to_img(&map);
     map_printer(&map);
-    //mlx_put_image_to_window(map.mlx,map.wnd, map.img.player, 0, 0);
     mlx_hook(map.wnd, 17, 0, ft_close, &map);
     mlx_key_hook(map.wnd, key_hook, &map);
     mlx_loop(map.mlx);

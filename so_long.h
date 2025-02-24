@@ -86,6 +86,7 @@ void error_image(t_map *map);
 
 
 int ft_close(t_map *map);
+void ft_win(t_map *map);
 int key_hook(int keysym, t_map *map);
 
 
@@ -93,5 +94,7 @@ void move_up(t_map *map);
 void move_down(t_map *map);
 void move_right(t_map *map);
 void move_left(t_map *map);
+
+
 
 #endif
