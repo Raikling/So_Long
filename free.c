@@ -1,9 +1,26 @@
 #include "so_long.h"
 
+// int ft_free_array(char **arr, int i)
+// {
+//     while (i > 0)
+//         free(arr[--i]);
+//     free(arr);
+//     return (0);
+// }
+
 int ft_free_array(char **arr, int i)
 {
+    if (!arr)
+        return (0);
     while (i > 0)
-        free(arr[--i]);
+    {
+        i--;
+        if (arr[i])  // Check if element is not NULL before freeing
+        {
+            free(arr[i]);
+            arr[i] = NULL;  // Set to NULL after freeing
+        }
+    }
     free(arr);
     return (0);
 }

@@ -15,7 +15,7 @@
 #include <stdlib.h>
 
 
-#define IMG_PXL 50
+#define IMG_PXL 150
 #define UP 119
 #define DOWN 115
 #define LEFT 97
@@ -84,5 +84,14 @@ void error_size(t_map *map);
 void error_map_elements(t_map *map);
 void error_image(t_map *map);
 
+
+int ft_close(t_map *map);
+int key_hook(int keysym, t_map *map);
+
+
+void move_up(t_map *map);
+void move_down(t_map *map);
+void move_right(t_map *map);
+void move_left(t_map *map);
 
 #endif

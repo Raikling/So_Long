@@ -9,7 +9,7 @@ void file_to_img(t_map *map)
     if (!map->img.floor)
         error_image(map);
 
-    map->img.collectible = mlx_xpm_file_to_image(map->mlx, "Ressources/collecttible.xpm", &a, &a);
+    map->img.collectible = mlx_xpm_file_to_image(map->mlx, "Ressources/collectible.xpm", &a, &a);
     if (!map->img.collectible)
         error_image(map);
 

@@ -47,29 +47,7 @@ void check_param(t_map *map) //counts the number or C, E, P, then checks for the
         error_map_elements(map);
 }
 
-// void check_wall(t_map *map) //ensures that the map is surrounded by walls (1)
-// {
-//     int x;
-//     int y;
 
-//     y = 0;
-//     while(map->array[0][y] == '1' && map->array[1][y])
-//         y++;
-//     if (map->array[1][y] != '\0')
-//         error_wall(map);
-//     x = 1;
-//     while (x < map->x)
-//     {
-//         if (map->array[x][0] != '1' || map->array[x][map->y - 1] != '1') 
-//             error_wall(map);
-//         x++;
-//     }
-//     y = 0;
-//     while (map->array[map->x - 1][y] == '1')
-//         y++;
-//     if (map->array[map->x - 1][y] != '\0')
-//         error_wall(map);
-// }
 void check_wall(t_map *map) //testing
 {
     int x, y;
@@ -89,24 +67,7 @@ void check_wall(t_map *map) //testing
     }
 }
 
-// void check_size(t_map *map)
-// {
-//     int x;
-//     int row_len;
-//     int max;
 
-//     x = 0;
-//     row_len = 0;
-//     max = ft_strlen(map->array[x]);
-//     while (x < map->x)
-//     {
-//         row_len = ft_strlen(map->array[x]);
-//         if (max != row_len)
-//             error_size(map);
-//         x++;
-//     }
-//     map->y = max; 
-// }
 
 void check_size(t_map *map)
 {
@@ -153,5 +114,5 @@ void map_checker(t_map *map)
     printf("Checking elements...\n");
     check_param(map);
     printf("Map valid!\n");
-    ft_free_array(map->copy, map->x);
+    //ft_free_array(map->copy, map->x);
 }

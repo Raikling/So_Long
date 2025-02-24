@@ -1,46 +1,6 @@
 #include "so_long.h"
 
 
-// void map_array(t_map *map) {
-//     if (!map || !map->file) {
-//         return;
-//     }
-
-//     map->array = ft_split(map->file, '\n');
-//     if (!map->array) {
-//         return;
-//     }
-
-//     map->copy = ft_split(map->file, '\n');
-//     if (!map->copy) {
-//         // Free map->array if map->copy allocation fails
-//         int i = 0;
-//         while (map->array[i] != NULL) {
-//             free(map->array[i]);
-//             i++;
-//         }
-//         free(map->array);
-//         return;
-//     }
-
-//     int i;
-
-//     // Free the array after use
-//     i = 0;
-//     while (map->array[i] != NULL) {
-//         free(map->array[i]);
-//         i++;
-//     }
-//     free(map->array);
-
-//     i = 0;
-//     while (map->copy[i] != NULL) {
-//         free(map->copy[i]);
-//         i++;
-//     }
-//     free(map->copy);
-// }
-
 
 void map_array(t_map *map)
 {
