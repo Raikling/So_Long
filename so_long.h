@@ -96,6 +96,8 @@ void move_right(t_map *map);
 void move_left(t_map *map);
 
 void print_movements(t_map *map);
+void scan_player(t_map *map);
+void check_valid_path(t_map *map);
 
 
 

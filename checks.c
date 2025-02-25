@@ -89,30 +89,29 @@ void check_size(t_map *map)
     map->y = max;
 }
 
-// void map_checker(t_map *map)
-// {
-//     check_file(map);
-//     map_array(map); 
-//     check_size(map);
-//     check_wall(map);
-//     check_param(map);
-//     //check_valid_path(map);
-//     ft_free_array(map->copy, map->x);
-    
-// }
-
 void map_checker(t_map *map)
 {
-    printf("Checking file...\n");
     check_file(map);
-    printf("Parsing map...\n");
-    map_array(map);
-    printf("Checking size...\n");
+    map_array(map); 
     check_size(map);
-    printf("Checking walls...\n");
     check_wall(map);
-    printf("Checking elements...\n");
     check_param(map);
-    printf("Map valid!\n");
-    //ft_free_array(map->copy, map->x);
+    check_valid_path(map);
 }
+
+// void map_checker(t_map *map)
+// {
+//     printf("Checking file...\n");
+//     check_file(map);
+//     printf("Parsing map...\n");
+//     map_array(map);
+//     printf("Checking size...\n");
+//     check_size(map);
+//     printf("Checking walls...\n");
+//     check_wall(map);
+//     printf("Checking elements...\n");
+//     check_param(map);
+//     printf("Map valid!\n");
+//     check_valid_path(map);
+//     ft_printf("Valid path...\n");
+// }

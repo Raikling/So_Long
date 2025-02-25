@@ -1,12 +1,6 @@
 #include "so_long.h"
 
-// int ft_free_array(char **arr, int i)
-// {
-//     while (i > 0)
-//         free(arr[--i]);
-//     free(arr);
-//     return (0);
-// }
+
 
 int ft_free_array(char **arr, int i)
 {
