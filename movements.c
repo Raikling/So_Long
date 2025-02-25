@@ -53,6 +53,7 @@ void move_up(t_map *map)
         mlx_put_image_to_window(map->mlx, map->wnd, map->img.floor, y * IMG_PXL, x * IMG_PXL);
         mlx_put_image_to_window(map->mlx, map->wnd, map->img.player, y * IMG_PXL, x * IMG_PXL);
         map->array[x][y] = 'P';
+        print_movements(map);
     }
 }
 
@@ -74,6 +75,7 @@ void move_down(t_map *map)
         mlx_put_image_to_window(map->mlx, map->wnd, map->img.floor, y * IMG_PXL, x * IMG_PXL);
         mlx_put_image_to_window(map->mlx, map->wnd, map->img.player, y * IMG_PXL, x * IMG_PXL);
         map->array[x][y] = 'P';
+        print_movements(map);
     }
 }
 
@@ -95,6 +97,7 @@ void move_right(t_map *map)
         mlx_put_image_to_window(map->mlx, map->wnd, map->img.floor, y * IMG_PXL, x * IMG_PXL);
         mlx_put_image_to_window(map->mlx, map->wnd, map->img.player, y * IMG_PXL, x * IMG_PXL);
         map->array[x][y] = 'P';
+        print_movements(map);
     }
 }
 
@@ -116,5 +119,6 @@ void move_left(t_map *map)
         mlx_put_image_to_window(map->mlx, map->wnd, map->img.floor, y * IMG_PXL, x * IMG_PXL);
         mlx_put_image_to_window(map->mlx, map->wnd, map->img.player, y * IMG_PXL, x * IMG_PXL);
         map->array[x][y] = 'P';
+        print_movements(map);
     }
 }

@@ -95,6 +95,8 @@ void move_down(t_map *map);
 void move_right(t_map *map);
 void move_left(t_map *map);
 
+void print_movements(t_map *map);
+
 
 
 #endif

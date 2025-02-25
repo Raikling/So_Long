@@ -38,9 +38,6 @@ void ft_win(t_map *map)
     map->moves++;
     mlx_clear_window(map->mlx, map->wnd);
     mlx_string_put(map->mlx, map->wnd, map->x / 2 * IMG_PXL, map->y /2 * IMG_PXL, 0xFFFA9E, "GG YOU WON");
-    write(1, "\n", 1);
-    write(1, "\x1b[33;01m", 9);
-    write(1, "🏆 YOU WON!! 🏆\n", 14);
-    write(1, "\x1b[0m", 5);
+    ft_printf("\n\x1b[33;01m🏆 YOU WON!! 🏆\x1b[0m\n");
     ft_close(map);
 }

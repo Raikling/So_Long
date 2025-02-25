@@ -37,5 +37,7 @@ int main(int ac, char **av)
     mlx_loop(map.mlx);
     return (0);
     }
+    ft_printf("\033[1;31m🛑ERROR: Usage: ./so_long mapfile\n\033[0m");
+	exit(EXIT_FAILURE);
 }
 
