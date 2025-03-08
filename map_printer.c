@@ -34,9 +34,9 @@ void print_movements(t_map *map)
     char *move;
 
     move = ft_itoa(map->moves);
-    ft_printf("\r\x1b[33;01m"); // Start color
+    ft_printf("\x1b[33;01m"); // Start color
     ft_printf("%s", move);      // Print number
     ft_printf("\x1b[0m");       // Reset color
-    ft_printf(" movements");    // Print "movements"
+    ft_printf(" movements\n");    // Print "movements"
     free(move);
 }
