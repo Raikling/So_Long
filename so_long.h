@@ -35,7 +35,6 @@ typedef struct s_img
     void *collectible;
     void *wall;
     void *exit;
-    void *enemy;
 }   t_img;
 
 typedef struct s_map

@@ -16,11 +16,12 @@ void move_on_path(t_map *map, int x, int y)
     {
         map->e_check -= 1;
         map->copy[x][y] = '1';
+        return ;
     }
     else if (type == '0' || type == 'P')
         map->copy[x][y] = '1';
     else if (type == '1')
-        return ;
+        return ;    
     else 
         return ;
     move_on_path(map, x + 1, y);

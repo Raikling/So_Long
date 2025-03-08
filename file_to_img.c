@@ -21,10 +21,7 @@ void file_to_img(t_map *map)
     if (!map->img.player)
         error_image(map);
 
-    map->img.enemy = mlx_xpm_file_to_image(map->mlx, "Ressources/enemy.xpm", &a, &a);
-    if (!map->img.enemy)
-        error_image(map);
-    map->img.exit = mlx_xpm_file_to_image(map->mlx, "Ressources/exit_active.xpm", &a, &a);
+    map->img.exit = mlx_xpm_file_to_image(map->mlx, "Ressources/exit.xpm", &a, &a);
     if (!map->img.exit)
         error_image(map);
 }
@@ -40,7 +37,7 @@ void error_image(t_map *map)
         mlx_destroy_image(map->mlx, map->img.wall);
     if (map->img.player)
         mlx_destroy_image(map->mlx, map->img.player);
-    if (map->img.enemy)
-        mlx_destroy_image(map->mlx, map->img.enemy);
+    if (map->img.exit)
+        mlx_destroy_image(map->mlx, map->img.exit);
     ft_exit_free(map);
 }

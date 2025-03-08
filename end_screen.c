@@ -10,8 +10,6 @@ int ft_close(t_map *map)
         mlx_destroy_image(map->mlx, map->img.wall);
     if (map->img.player)
         mlx_destroy_image(map->mlx, map->img.player);
-    if (map->img.enemy)
-        mlx_destroy_image(map->mlx, map->img.enemy);
     if (map->img.exit)
         mlx_destroy_image(map->mlx, map->img.exit);
 

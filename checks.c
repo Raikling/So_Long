@@ -43,12 +43,12 @@ void check_param(t_map *map) //counts the number or C, E, P, then checks for the
         y = 0;
         x++;
     }
-    if (map->c < 1 || map->e < 1 || map->p != 1)
+    if (map->c < 1 || map->e != 1 || map->p != 1)
         error_map_elements(map);
 }
 
 
-void check_wall(t_map *map) //testing
+void check_wall(t_map *map) 
 {
     int x, y;
     y = 0;
