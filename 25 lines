@@ -1,0 +1,154 @@
+//free
+int	ft_free_array(char **arr, int i)
+{
+	if (!arr)
+		return (0);
+	while (i > 0)
+	{
+		i--;
+		if (arr[i])
+		{
+			free(arr[i]);
+			arr[i] = NULL;
+		}
+	}
+	free(arr);
+	return (0);
+}
+
+void	ft_exit_free(t_map *map)
+{
+	int (i);
+	if (map == NULL)
+	{
+		ft_printf("Error: map is NULL\n");
+		exit(EXIT_FAILURE);
+	}
+	if (map->array)
+	{
+		i = 0;
+		while (map->array[i])
+		{
+			free(map->array[i]);
+			map->array[i] = NULL;
+		}
+		free(map->array);
+		map->array = NULL;
+	}
+	if (map->copy)
+	{
+		i = 0;
+		while (map->copy[i])
+		{
+			free(map->copy[i]);
+			map->array[i] = NULL;
+		}
+		free(map->copy);
+		map->copy = NULL;
+	}
+	if (map->file)
+	{
+		free(map->file);
+		map->file = NULL;
+	}
+	if (map->line)
+	{
+		free(map->line);
+		map->line = NULL;
+	}
+	ft_printf("Exiting due to error\n");
+	exit(EXIT_FAILURE);
+}
+
+//map_array
+
+void	map_array(t_map *map)
+{
+	int		fd;
+	char	*temp;
+
+	map->x = 0;
+	map->line = NULL;
+	map->file = NULL;
+	fd = open(map->filename, O_RDONLY);
+	if (fd == -1)
+		error_openfile();
+	while (1)
+	{
+		map->line = get_next_line(fd);
+		if (!map->line)
+			break ;
+		if (!map->line[0])
+		{
+			free(map->line);
+			map->line = NULL;
+			continue ;
+		}
+		temp = map->file;
+		map->file = ft_strjoin(map->file, map->line);
+		if (!map->file)
+		{
+			free(temp);
+			free(map->line);
+			map->line = NULL;
+			close(fd);
+			ft_exit_free(map);
+		}
+		free(temp);
+		free(map->line);
+		map->line = NULL;
+		map->x++;
+	}
+	close(fd);
+	map->array = ft_split(map->file, '\n');
+	map->copy = ft_split(map->file, '\n');
+	if (!map->array || !map->copy)
+		ft_exit_free(map);
+	free(map->file);
+	map->file = NULL;
+}
+
+//map_printer
+
+
+void	map_printer(t_map *map)
+{
+	int (x), (y);
+	x = 0;
+	while (x < map->x)
+	{
+		y = 0;
+		while (y < map->y)
+		{
+			if (map->array[x][y] == '1')
+				mlx_put_image_to_window(map->mlx, map->wnd, \
+					map->img.wall, y * IMG_PXL, x * IMG_PXL);
+			else if (map->array[x][y] == '0')
+				mlx_put_image_to_window(map->mlx, map->wnd, \
+					map->img.floor, y * IMG_PXL, x * IMG_PXL);
+			else if (map->array[x][y] == 'C')
+				mlx_put_image_to_window(map->mlx, map->wnd, \
+					map->img.collectible, y * IMG_PXL, x * IMG_PXL);
+			else if (map->array[x][y] == 'E')
+				mlx_put_image_to_window(map->mlx, map->wnd, \
+					map->img.exit, y * IMG_PXL, x * IMG_PXL);
+			else if (map->array[x][y] == 'P')
+				mlx_put_image_to_window(map->mlx, map->wnd, \
+					map->img.player, y * IMG_PXL, x * IMG_PXL);
+			y++;
+		}
+		x++;
+	}
+}
+
+void	print_movements(t_map *map)
+{
+	char	*move;
+
+	move = ft_itoa(map->moves);
+	ft_printf("\x1b[33;01m");
+	ft_printf("%s", move);
+	ft_printf("\x1b[0m");
+	ft_printf(" movements\n");
+	free(move);
+}
